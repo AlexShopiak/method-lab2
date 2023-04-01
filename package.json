@@ -1,0 +1,27 @@
+{
+  "name": "method-lab2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexShopiak/method-lab2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexShopiak/method-lab2/issues"
+  },
+  "homepage": "https://github.com/AlexShopiak/method-lab2#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
