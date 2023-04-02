@@ -82,6 +82,10 @@ const initTesting = list => {
         expect(list.get(3)).toEqual('d');
         expect(list.get(1)).toEqual('b');
 
+        let data = list.get(0);
+        data = 'X';
+        expect(list.get(0)).toEqual('a');
+
         expect(() => list.get('d')).toThrow(messages.notInt);
         expect(() => list.get(23)).toThrow(messages.invInd);
     })
