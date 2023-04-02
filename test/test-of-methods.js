@@ -1,3 +1,5 @@
+const {messages} = require('../lib/messages.js');
+
 const initTesting = list => {
 
     test('testing length()', () => {
@@ -20,9 +22,9 @@ const initTesting = list => {
         list.append('b');
         expect(list.fast_clone()).toEqual(['a', 'b']);
 
-        expect(() => list.append(4)).toThrow("Not a character");
-        expect(() => list.append("meow")).toThrow("Not a character");
-        expect(() => list.append("1")).toThrow("Not a character");
+        expect(() => list.append(4)).toThrow(messages.notChar);
+        expect(() => list.append("meow")).toThrow(messages.notChar);
+        expect(() => list.append("1")).toThrow(messages.notChar);
     })
 
     test('testing insert()', () => {
@@ -36,10 +38,10 @@ const initTesting = list => {
         list.insert('X', 6);
         expect(list.fast_clone()).toEqual(['X','a','X','b','c','d','X']);
 
-        expect(() => list.insert('5', 1)).toThrow("Not a character");
-        expect(() => list.insert('a', 1.5)).toThrow("Not an integer");
-        expect(() => list.insert('a', -1)).toThrow("Invalid index");
-        expect(() => list.insert('a', 10)).toThrow("Invalid index");
+        expect(() => list.insert('5', 1)).toThrow(messages.notChar);
+        expect(() => list.insert('a', 1.5)).toThrow(messages.notInt);
+        expect(() => list.insert('a', -1)).toThrow(messages.invInd);
+        expect(() => list.insert('a', 10)).toThrow(messages.invInd);
     })
 
     test('testing delete()', () => {
@@ -51,10 +53,10 @@ const initTesting = list => {
         expect(list.delete(5)).toEqual('g');
         expect(list.fast_clone()).toEqual(['a','c','d','e','f']);
 
-        expect(() => list.delete(-1)).toThrow("Invalid index");
-        expect(() => list.delete(5)).toThrow("Invalid index");
-        expect(() => list.delete(-1.5)).toThrow("Not an integer");
-        expect(() => list.delete('d')).toThrow("Not an integer");
+        expect(() => list.delete(-1)).toThrow(messages.invInd);
+        expect(() => list.delete(5)).toThrow(messages.invInd);
+        expect(() => list.delete(-1.5)).toThrow(messages.notInt);
+        expect(() => list.delete('d')).toThrow(messages.notInt);
     })
 
     test('testing deleteAll()', () => {
@@ -68,8 +70,8 @@ const initTesting = list => {
         list.deleteAll('e')
         expect(list.fast_clone()).toEqual(['b','d','g']);
 
-        expect(() => list.deleteAll(45)).toThrow("Not a character");
-        expect(() => list.deleteAll('start')).toThrow("Not a character");
+        expect(() => list.deleteAll(45)).toThrow(messages.notChar);
+        expect(() => list.deleteAll('start')).toThrow(messages.notChar);
     })
 
     test('testing get()', () => {
@@ -80,8 +82,8 @@ const initTesting = list => {
         expect(list.get(3)).toEqual('d');
         expect(list.get(1)).toEqual('b');
 
-        expect(() => list.get('d')).toThrow("Not an integer");
-        expect(() => list.get(23)).toThrow("Invalid index");
+        expect(() => list.get('d')).toThrow(messages.notInt);
+        expect(() => list.get(23)).toThrow(messages.invInd);
     })
 
     test('testing clone()', () => {
@@ -114,8 +116,8 @@ const initTesting = list => {
         expect(list.findFirst('d')).toEqual(3);
         expect(list.findFirst('g')).toEqual(-1);
 
-        expect(() => list.findFirst(2)).toThrow("Not a character");
-        expect(() => list.findFirst('meow')).toThrow("Not a character");
+        expect(() => list.findFirst(2)).toThrow(messages.notChar);
+        expect(() => list.findFirst('meow')).toThrow(messages.notChar);
     })
 
     test('testing findLast()', () => {
@@ -126,8 +128,8 @@ const initTesting = list => {
         expect(list.findLast('e')).toEqual(4);
         expect(list.findLast('f')).toEqual(-1);
 
-        expect(() => list.findLast(4)).toThrow("Not a character");
-        expect(() => list.findLast('abc')).toThrow("Not a character");
+        expect(() => list.findLast(4)).toThrow(messages.notChar);
+        expect(() => list.findLast('abc')).toThrow(messages.notChar);
     })
 
     test('testing clear()', () => {
