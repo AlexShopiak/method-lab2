@@ -1,35 +1,35 @@
 # Implementation of List() class. Its testing and refactoring
 
-### Розрахунок номеру варіанту та опис варіанту
-- 1331 % 4 = 3 варіант
-- Cписок на базі вбудованих масивів/списків -> двобічно зв'язаний список
+### Variant number calculation and option description
+- 1331 % 4 = 3 variant
+- List based on built-in arrays/lists -> doubly linked list
 
-### Інструкція, як зібрати проект та запустити тести
-- Встановити <code><a href="https://nodejs.org/en">Node.js</a></code>
-- Встановити <code><a href="https://www.npmjs.com/package/npm">Node Package Manager</a></code>
-- У корені проекту оновити пакети командою <code>npm i</code>
-- У корені проекту запустити тести командою <code>npm test</code>
+### How to build a project and run tests
+- Install <code><a href="https://nodejs.org/en">Node.js</a></code>
+- Install <code><a href="https://www.npmjs.com/package/npm">Node Package Manager</a></code>
+- At the root of the project, update the packages <code>npm i</code>
+- At the root of the project, run the team tests <code>npm test</code>
 
-### Опис проекту
+### Description of the project
 #### 1) .\lib
-- <code>linked-list.js</code> Реалізація двобічно зв’язаного списку
-- <code>list.js</code> Реалізація списку на базі вбудованих масивах
-- <code>messages.js</code> Набір повідомлень для помилок
-- <code>type-checkers.js</code> Набір функцій для перевірки типів
+- <code>linked-list.js</code> Doubly linked list implementation
+- <code>list.js</code> Implementation of a list based on built-in arrays
+- <code>messages.js</code> Set of error messages
+- <code>type-checkers.js</code> A set of functions for type checking
 #### 2) .\test
-- <code>linked-list.test.js</code> Середовище тестування для зв’язаного списку
-- <code>list.test.js</code> Середовище тестування списку на вбудованих масивах
-- <code>test-of-methods.js</code> Тест, що тестує почергово методи екземпляру класу List() або LinkedList()
+- <code>linked-list.test.js</code> Test environment for linked list
+- <code>list.test.js</code> Test environment for list on built-in arrays
+- <code>test-of-methods.js</code> A test that alternately tests the methods of an instance of the List() or LinkedList() class
 
-### Посилання на коміт, на якому впали тести на CI
-- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/46fd24007bb49a472d91f28aef4e71bfde77f06d">перший коміт</a></code>
-- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/c39e7e2dc8c014840cd1dfd9ba6acf842e0d8c0a">другий коміт</a></code>
-- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/343398bd00dd637d0383da2f3d51dcf17ec4dbac">третій коміт</a></code>
+### A reference to the commit on which the CI tests failed
+- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/46fd24007bb49a472d91f28aef4e71bfde77f06d">1st commit</a></code>
+- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/c39e7e2dc8c014840cd1dfd9ba6acf842e0d8c0a">2nd commit</a></code>
+- <code><a href="https://github.com/AlexShopiak/method-lab2/commit/343398bd00dd637d0383da2f3d51dcf17ec4dbac">3rd commit</a></code>
 
-### Ваші короткі висновки, про те, чи дійсно вам допомогли unit-тести, чи це була марна трата часу
-- Спершу, коли я створював клас на основі вбудованих масивів, тести були непотрібні та в цілому не мали сенсу.
-  Проте, коли я почав виконувати рефакторинг та впроваджувати алгоритми середньої складності, тести зберегли купу
-  мого часу, оскільки кылькість помилок була величезною. 
-- Це був мій перший досвід у використанні юніт тестів, оскільки до цього увесь важливий функціонал я перевіряв 
-  за допомогою онлайн компіляторів, копіюючи туди потрібний для тестування код. Надалі у своїх проектах я
-  буду покривати код тестами, оскільки це економить час у довгостроковій перспективі.
+### Brief conclusions about whether unit tests really helped you or were a waste of time
+- At first, when I created a class based on built-in arrays, the tests were unnecessary and generally made no sense.
+  However, when I started refactoring and implementing algorithms of medium complexity, the tests
+  saved me a lot of time because the number of errors was huge. 
+- This was my first experience in using unit tests, because before that I checked all 
+  important functionality using online compilers, copying the code needed for testing there. In future projects
+  I will cover the code with tests as it saves time in the long run.
